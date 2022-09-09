@@ -29,13 +29,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
               let rmImg = person.image;
               let rmStatus = person.status;
               let rmDiv = document.createElement("article");
+              let imgDiv = document.createElement("div")
+              imgDiv.classList.add("bilder")
+              let nameText = document.createElement("div") 
+              let genderText = document.createElement("div")
+              let statusText = document.createElement("div")
+              let originText = document.createElement("div")
 
               rmDiv.classList.add("card-holder");
-              rmDiv.innerHTML = `
-              <h2>${rmName}</h2> 
-              <p>${rmGender}</p> 
-              <p>${rmStatus}</p> 
+              rmDiv.appendChild(imgDiv)
+              rmDiv.appendChild(nameText)
+              rmDiv.appendChild(genderText)
+              rmDiv.appendChild(statusText)
+              imgDiv.innerHTML = `
               <img src="${rmImg}" />`;
+              nameText.innerHTML =`<h2>${rmName}</h2>  `
+              genderText.innerHTML = `<p>${rmGender}</p> ` 
+              statusText.innerHTML = `<p>${rmStatus}</p>  `
+              
 
               cards.appendChild(rmDiv);
             }

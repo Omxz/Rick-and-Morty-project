@@ -64,6 +64,24 @@ footer {
   margin-top: 20px;
 }
 
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 50%;
+  background-color: black;
+  display: flex;
+  height: 33.3%;
+  margin: 10px;
+}
+
+.bilder {
+  width: 0%;
+}
+
 .footer1 {
   display: flex;
   margin-top: 20px;
