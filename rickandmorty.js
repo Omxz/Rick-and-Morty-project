@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let buttonChar = document.querySelector(".search-char");
   let cards = document.querySelector(".cards");
 
-  let input = "";
+  let input = "Morty";
 
   function fetchCharacters() {
     let b = 1;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               let rmStatus = person.status;
               let rmDiv = document.createElement("article");
               let imgDiv = document.createElement("div")
-              imgDiv.classList.add("bilder")
+              imgDiv.classList.add("image-holder")
               let nameText = document.createElement("div") 
               let genderText = document.createElement("div")
               let statusText = document.createElement("div")
