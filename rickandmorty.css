@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .head {
@@ -25,8 +27,16 @@
 }
 
 .main {
-  height: 600px;
+  height: 100vh;
   background-color: darkblue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main .content-area {
+  width: 70%;
+  background-color: white;
+  height: 100vh;
 }
 
 footer {
