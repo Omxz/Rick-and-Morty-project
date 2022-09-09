@@ -1,3 +1,62 @@
 * {
   box-sizing: border-box;
+}
+
+.head {
+  display: flex;
+  height: 100px;
+  width: 1200px;
+}
+
+.top-header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+}
+
+.bottom-head {
+  display: flex;
+  height: 200px;
+  width: 1200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 600px;
+  background-color: darkblue;
+}
+
+footer {
+  display: flex;
+  background-color: darkblue;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer1 {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer2 {
+  width: 100%;
+}
+
+.footer3 {
+  width: 100%;
+}
+
+.footer4 {
+  width: 100%;
+}
+
+.bottom-footer1 .bottom-footer2 .bottom-footer3 {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=rickandmorty.css.map */
