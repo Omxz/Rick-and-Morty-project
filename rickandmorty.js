@@ -1,7 +1,5 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-let cards = document.querySelector(".content-area")
 
-  
+document.addEventListener("DOMContentLoaded", (event) => {
   
   function fetchRnM() {
     fetch("https://rickandmortyapi.com/api", {
@@ -9,12 +7,34 @@ let cards = document.querySelector(".content-area")
         Accept: "application/json",
       },
     })
+  function fetchCharacters() {
+    fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        getImg.src = data.img;
-        getH1.innerHTML = data.title;
-        getImg.alt = data.alt;
+       
+        console.log(data.results[0])
       });
   }
-});
+  function fetchEpisodes() {
+    fetch("https://rickandmortyapi.com/api/episode")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results[0])
+      });
+  }
+  function fetchLocations() {
+    fetch("https://rickandmortyapi.com/api/location")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results[0])
+      });
+  }
+
+  fetchCharacters()
+  fetchEpisodes()
+  fetchLocations()
+
+
+  fetchRnM()
+}});
