@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+let cards = document.querySelector(".content-area")
+
+  
   
   function fetchRnM() {
     fetch("https://rickandmortyapi.com/api", {

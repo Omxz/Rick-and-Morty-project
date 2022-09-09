@@ -39,6 +39,11 @@ h1{
       width: 70%;
       background-color: white;
       height: 100vh;
+      .search-field {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
     }
     
   }
