@@ -2,22 +2,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let buttonChar = document.querySelector(".search-char");
   let cards = document.querySelector(".cards");
 
-  let input = "Hitler";
+  let input = "";
 
   function fetchCharacters() {
-    for (let i = 1; i <= 42; i++) {
-      fetch("https://rickandmortyapi.com/api/character/?page=" + i)
+    let b = 1;
+    const maxCount = 6;
+    for (let j = 1; j <= 42; j++) {
+      fetch("https://rickandmortyapi.com/api/character/?page=" + j)
         .then((res) => res.json())
         .then((data) => {
           for (let i = 0; i <= 20; i++) {
             let person = data.results[i];
+
+            if (!person) {
+              // continue;
+              break;
+            }
+
             let nameOfPerson = data.results[i].name;
 
-            let b = 0;
-
-            if (nameOfPerson.includes(input) && b < 6) {
+            console.log("bbbbb", b);
+            if (nameOfPerson.includes(input) && b < maxCount) {
+              b++;
               let rmName = person.name;
-              let rmGender = person.gender
+              let rmGender = person.gender;
               let rmImg = person.image;
               let rmStatus = person.status;
               let rmDiv = document.createElement("article");
@@ -29,9 +37,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
               <p>${rmStatus}</p> 
               <img src="${rmImg}" />`;
 
-              cards.appendChild(rmDiv)
-
-            } 
+              cards.appendChild(rmDiv);
+            }
 
             // if (name.includes(input)){
             //   console.log(name)
