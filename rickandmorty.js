@@ -1,40 +1,28 @@
-
 document.addEventListener("DOMContentLoaded", (event) => {
-  
-  function fetchRnM() {
-    fetch("https://rickandmortyapi.com/api", {
-      headers: {
-        Accept: "application/json",
-      },
-    })
+  let buttonChar = document.querySelector(".search-char");
+
+  buttonChar.addEventListener("click", () => {
+    fetchCharacters;
+  });
+
+  let input = "ric"
+
   function fetchCharacters() {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-       
-        console.log(data.results[0])
-      });
-  }
-  function fetchEpisodes() {
-    fetch("https://rickandmortyapi.com/api/episode")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.results[0])
-      });
-  }
-  function fetchLocations() {
-    fetch("https://rickandmortyapi.com/api/location")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.results[0])
-      });
-  }
+    for (let i = 1; i <= 42; i++) {
 
-  fetchCharacters()
-  fetchEpisodes()
-  fetchLocations()
+      fetch("https://rickandmortyapi.com/api/character/?page=" + i)
+        .then((res) => res.json())
+        .then((data) => {
+
+          let name = toString(data.results.name)
+          if (name.includes(input)){
+            console.log(name)
+          }
 
 
-  fetchRnM()
-}});
+        });
+    }
+  }
+
+  fetchCharacters();
+});
