@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   // SPEECH START
-
+  const header = document.querySelector(".bottom-head")
   const btn = document.querySelector(".talk");
   const content = document.querySelector(".content");
+  header.addEventListener('click',function(){
+    location.reload();
+   })
 
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
