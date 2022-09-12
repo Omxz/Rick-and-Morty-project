@@ -10,17 +10,36 @@ const recognition = new SpeechRecognition();
 
 recognition.onstart = function() {
   console.log('voice is activated, you can use microphone');
+  btn.classList.remove("talk")
+  btn.classList.add("talk2")
+  btn.innerHTML = "REC"
+
 }
 
 recognition.onresult = function(event) {
 const current = event.resultIndex;
-
+btn.classList.remove("talk2")
+btn.classList.add("talk")
+btn.innerHTML = "TALK"
 const transcript = event.results[current][0].transcript;
-content.textContent = transcript;
+// content.textContent = transcript;
 let a = transcript
-fetchCharacters(a)
+talkBack("Searching for" + a)
+console.log(fetchCharacters(a))
+if (){
+ talkBack("Group per holmberg sucks")
+}
 }
 
+function talkBack(message){
+  const speach = new SpeechSynthesisUtterance();
+  speach.text = message;
+  speach.volume = 1;
+  speach.rate = 1 ;
+  speach.pitch = 1;
+  window.speechSynthesis.speak(speach)
+
+}
 // add the listener to the btn
 
 btn.addEventListener('click', () => {
@@ -31,7 +50,7 @@ btn.addEventListener('click', () => {
 
 
   let cards = document.querySelector(".cards");
-
+  
  
 
   function fetchCharacters(input) {
@@ -80,7 +99,7 @@ btn.addEventListener('click', () => {
               nameText.innerHTML =`<h2>${rmName}</h2>  `
               genderText.innerHTML = `<p>Gender: ${rmGender}</p> ` 
               statusText.innerHTML = `<p>Status: ${rmStatus}</p>  `
-              speciesText.innerHTML = `<p>Species: ${rmSpecies}</p>½` 
+              speciesText.innerHTML = `<p>Species: ${rmSpecies}</p>` 
               console.log(person)
 
               cards.appendChild(rmDiv);
