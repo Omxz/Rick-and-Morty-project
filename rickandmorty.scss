@@ -19,6 +19,7 @@
   height: 21%;
 }
 .bottom-head {
+  text-align: center;
   background-color: white;
 
   font-size: 2rem;
@@ -28,24 +29,24 @@
   justify-content: center;
   align-items: center;
 }
-h1 {
-  font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
+
+
+body {
+   font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
     "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-}
-body {
   background-color: rgb(44, 41, 41);
 }
 .main {
-  height: 100vh;
+  height: 100%;
   background-color: rgb(44, 41, 41);
   width: 100%;
   display: flex;
   justify-content: center;
   .content-area {
     width: 80%;
-    background-color: white;
-    height: 100vh;
+    // background-color: white;
+    height: 100%;
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -53,23 +54,26 @@ body {
       width: 100%;
       height: 100%;
       article {
-        width: 50%;
+        width: 45%;
         background-color: rgb(44, 41, 41);
         display: flex;
         height: 30%;
-        // margin: 10px;
+        margin: 10px;
+        border: 3px solid white;
+        min-width: 400px;
+       
       }
     }
   }
 }
 
 h2 {
-  font-size:100px;
+  font-size:30px;
   color: white;
 }
 
 .cards p {
-font-size: 50px;
+font-size: 20px;
 color: white;
 
 
@@ -85,15 +89,19 @@ footer {
 }
 
 .image-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 45%;
   ;
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 93%;
   border-radius: 50%;
   object-fit: contain;
+  
 }
 
 .footer1 {
@@ -110,4 +118,11 @@ img {
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 25px;
+}
+
+.wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }

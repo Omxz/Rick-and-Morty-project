@@ -28,25 +28,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
               let rmGender = person.gender;
               let rmImg = person.image;
               let rmStatus = person.status;
+              let rmSpecies = person.species;
               let rmDiv = document.createElement("article");
               let imgDiv = document.createElement("div")
               imgDiv.classList.add("image-holder")
+              let wrapper = document.createElement("div")
               let nameText = document.createElement("div") 
               let genderText = document.createElement("div")
               let statusText = document.createElement("div")
-              let originText = document.createElement("div")
-
+              let speciesText = document.createElement("div")
+              wrapper.classList.add("wrapper")
               rmDiv.classList.add("card-holder");
               rmDiv.appendChild(imgDiv)
-              rmDiv.appendChild(nameText)
-              rmDiv.appendChild(genderText)
-              rmDiv.appendChild(statusText)
+              wrapper.appendChild(nameText)
+              wrapper.appendChild(genderText)
+              wrapper.appendChild(statusText)
+              wrapper.appendChild(speciesText)
+              rmDiv.appendChild(wrapper)
               imgDiv.innerHTML = `
               <img src="${rmImg}" />`;
               nameText.innerHTML =`<h2>${rmName}</h2>  `
-              genderText.innerHTML = `<p>${rmGender}</p> ` 
-              statusText.innerHTML = `<p>${rmStatus}</p>  `
-              
+              genderText.innerHTML = `<p>Gender: ${rmGender}</p> ` 
+              statusText.innerHTML = `<p>Status: ${rmStatus}</p>  `
+              speciesText.innerHTML = `<p>Species: ${rmSpecies}</p>½` 
+              console.log(person)
 
               cards.appendChild(rmDiv);
             }
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
   }
+  
 
   fetchCharacters();
 });
