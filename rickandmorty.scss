@@ -184,6 +184,14 @@ img {
   }
 }
 
+.errorDiv{
+  height: 10%;
+  width: 10%;
+  color: white;
+  background-color:rgb(44, 41, 41);
+  margin: 20px;
+}
+
 @media (max-width: 600px) {
 .bottom-head{
   font-size: 1rem;

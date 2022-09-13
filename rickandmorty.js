@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+  let hasTalked = false
   // SPEECH START
   const header = document.querySelector(".bottom-head")
   const btn = document.querySelector(".talk");
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const recognition = new SpeechRecognition();
 
   recognition.onstart = function () {
-    
+    hasTalked = false
     console.log("voice is activated, you can use microphone");
     btn.classList.remove("talk");
     btn.classList.add("talk2");
@@ -26,14 +27,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     btn.innerHTML = "TALK";
     const transcript = event.results[current][0].transcript;
     // content.textContent = transcript;
-    let a = transcript;
+     a = transcript;
 
     if (a == "Who is your master") {
       talkBack(
         "Sebastian Svensson is my true master,  Sebastian Stormborn of House Targaryen, the First of His Name, King of the Andals and the First Men, Protector of the Seven Kingdoms, the Father of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains. But of all things, my only friend"
       );
-    } else {
-      talkBack("Beep boop...search results for" + a + "aquired");
+    } else{
+      // talkBack("search results for" + a + "aquired");
       fetchCharacters(a);
     }
   };
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let cards = document.querySelector(".cards");
 
   function fetchCharacters(input) {
+
     let b = 1;
     const maxCount = 6;
     for (let j = 1; j <= 42; j++) {
@@ -73,7 +75,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             let nameOfPerson = data.results[i].name;
 
-            console.log("bbbbb", b);
             if (nameOfPerson.includes(input) && b < maxCount) {
               b++;
               // Getting info about persons
@@ -113,8 +114,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
               cards.appendChild(rmDiv);
             }
+            
           }
+          
+          if (j == 42) {
+
+            if (b <= 1) {
+              talkBack("There are 0 search results for" + input)
+            } else {
+              talkBack("search results for" + a + "aquired");
+            }
+          }
+          
         });
+      }
+      
+     
+      
+      
     }
-  }
 });
