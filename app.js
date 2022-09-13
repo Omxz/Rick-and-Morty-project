@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (tranText == "Who is your master") {
       talkBack(
-        "Sebastian Svensson is my true master,  Sebastian Stormborn of House Targaryen, the First of His Name, King of the Andals and the First Men, Protector of the Seven Kingdoms, the Father of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains. But of all things, my only friend"
+        "Sebastian Svensson is my true master,  Sebastian Stormborn of House Targaryen, the First of His Name, King of the Andals and the First Men, Protector of the Seven Kingdoms, the Father of Dragons, the Khaldrogo of the Great Grass Sea, the Unburnt, the Breaker of Chains. But of all things, my only friend"
       );
     } else{
       // talkBack("search results for" + a + "aquired");
