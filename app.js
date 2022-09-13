@@ -27,15 +27,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     btn.innerHTML = "TALK";
     const transcript = event.results[current][0].transcript;
     // content.textContent = transcript;
-     a = transcript;
+     let tranText = transcript;
 
-    if (a == "Who is your master") {
+    if (tranText == "Who is your master") {
       talkBack(
         "Sebastian Svensson is my true master,  Sebastian Stormborn of House Targaryen, the First of His Name, King of the Andals and the First Men, Protector of the Seven Kingdoms, the Father of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains. But of all things, my only friend"
       );
     } else{
       // talkBack("search results for" + a + "aquired");
-      fetchCharacters(a);
+      fetchCharacters(tranText);
     }
   };
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   function fetchCharacters(input) {
 
-    let b = 1;
+    let numberOfResults = 1;
     const maxCount = 6;
     for (let j = 1; j <= 42; j++) {
       fetch("https://rickandmortyapi.com/api/character/?page=" + j)
@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             let nameOfPerson = data.results[i].name;
 
-            if (nameOfPerson.includes(input) && b < maxCount) {
-              b++;
+            if (nameOfPerson.includes(input) && numberOfResults < maxCount) {
+              numberOfResults++;
               // Getting info about persons
               let rmName = person.name;
               let rmGender = person.gender;
@@ -119,10 +119,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
           
           if (j == 42) {
 
-            if (b <= 1) {
+            if (numberOfResults <= 1) {
               talkBack("There are 0 search results for" + input)
             } else {
-              talkBack("search results for" + a + "aquired");
+              talkBack("search results for" + input + "aquired");
             }
           }
           
